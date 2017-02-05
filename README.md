@@ -1,8 +1,10 @@
-# zmq
+#Delay simulation between multicast and unicast with zmq 
+
+ zmq
 sudo apt-get install libtool pkg-config build-essential autoconf automake
 sudo apt-get install libzmq-dev
 
-#Install libsodium
+Install libsodium
 
 git clone git://github.com/jedisct1/libsodium.git
 cd libsodium
@@ -11,7 +13,7 @@ cd libsodium
 sudo make install
 sudo ldconfig
 
-#Install zeromq
+Install zeromq
 
 git clone https://github.com/Undev/zeromq2-1.git
 ./autogen.sh
