@@ -6,7 +6,7 @@ context = zmq.Context()
 n=2
 m=10
 #  Socket to talk to server
-def Two_Test(name):
+def Two_Test():
  
  name = context.socket(zmq.SUB)
  name.connect("tcp://172.17.0.2:5555")
@@ -21,7 +21,7 @@ def Two_Test(name):
    millis = int(round(time.time() * 1000))
    print millis
    print data
-for i in range(10):
+for i in range(20):
         name=str(i)
-        thread = threading.Thread( target = Two_Test, args = (name) )
+        thread = threading.Thread( target = Two_Test, args = () )
         thread.start()

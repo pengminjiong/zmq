@@ -5,7 +5,7 @@ import time
 context = zmq.Context()
 
 #  Socket to talk to server
-def Two_Test(name):
+def Two_Test():
  
  name = context.socket(zmq.SUB)
  name.connect("epgm://eth0;224.0.55.55:1055")
@@ -22,5 +22,5 @@ def Two_Test(name):
    print data
 for i in range(10):
         name=str(i)
-        thread = threading.Thread( target = Two_Test, args = (name) )
+        thread = threading.Thread( target = Two_Test, args = () )
         thread.start()
