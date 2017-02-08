@@ -1,6 +1,6 @@
 import zmq
 import time
-
+import datetime
 context = zmq.Context()
 socket = context.socket(zmq.PUB)
 socket.setsockopt(zmq.LINGER, 0)    # discard unsent messages on close
@@ -11,7 +11,8 @@ while True:
     if msg == 'quit':
         break
     else:
-        millis = int(round(time.time() * 1000))
+        millis=datetime.datetime.now()
+        #millis = int(round(time.time() * 1000))
         print millis
         socket.send(msg)
 
